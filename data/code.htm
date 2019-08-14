@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=windows-1252">
+    <title>[insert your title here]</title>
+
+    <script type="text/javascript">
+        var relocateURL = "../";
+        if(parent.frames.length == 0) {
+          if(document.images) {
+            location.replace(relocateURL);
+          } else {
+            location = relocateURL;
+          }
+        }
+    </script>
+
+    <script type="text/javascript" src="js/mtmcode.js">
+    </script>
+
+    <script type="text/javascript">
+        MTMDefaultTarget = "view";
+        var MTMIconList = null;
+        MTMIconList = new IconList();
+        MTMIconList.addIcon(new MTMIcon("menu_link_external.gif", "http://", "pre"));
+        MTMIconList.addIcon(new MTMIcon("menu_link_pdf.gif", ".pdf", "post"));
+        function get_form(page, wlan_id){
+        	return 'goform/formWlanRedirect?redirect-url='+page+'&wlan_id='+wlan_id ;
+        }
+        // Main menu.
+        var menu = null;
+        menu = new MTMenu();
+
+        //Item speedtest.
+        menu.addItem('Server Speed test', 'wizard.asp', '', 'Server Speed test');
+        //Item AI Folder
+        menu.addItem("AI");
+        AI = new MTMenu();
+        AI.addItem("Port Filtering", "portfilter.asp", "", "Setup port filtering");
+        AI.addItem("IP Filtering", "ipfilter.asp", "", "Setup IP filering");
+        AI.addItem("MAC Filtering", "macfilter.asp", "", "Setup MAC filering");
+        AI.addItem("Port Forwarding", "portfw.asp", "", "Setup port-forwarding");
+        AI.addItem("URL Filtering", "urlfilter.asp", "", "Setup URL filering");
+        AI.addItem("DMZ", "dmz.asp", "", "Setup DMZ");
+        AI.addItem('VLAN', 'vlan.asp', '', 'Setup VLAN');
+        menu.makeLastSubmenu(AI);
+        
+        //{Itemname}.additem("itemName", "location", "", "Descripition")
+    </script>
+</head>
+
+<body onload="MTMStartMenu(true)" vlink="lime" text="#ffffcc" link="yellow" bgcolor="#000033" alink="red">
+
+
+</body>
+
+</html>
